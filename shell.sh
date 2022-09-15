@@ -17,11 +17,13 @@ else
     echo "Xcode CommandLineTools already installed"
 fi
 
-echo "Setting up Git"
-# sh git-setup.sh $EMAIL
+echo "Install Git and set up"
+brew install git
+brew link --overwrite git
+sh git-setup.sh $EMAIL
 
 echo "Setting up SSH key"
-# sh ssh-key-setup.sh $EMAIL
+sh ssh-key-setup.sh $EMAIL
 
 # Install Homebrew if needed
 # Homebrew seems to require Git with user.name and user.email configured
@@ -42,7 +44,7 @@ sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/too
 
 # Syntax highlighting, auto-suggestions
 git clone https://github.com/zsh-users/zsh-syntax-highlighting.git ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-syntax-highlighting
-git clone https://github.com/zsh-users/zsh-autosuggestions $ZSH_CUSTOM/plugins/zsh-autosuggestions
+git clone https://github.com/zsh-users/zsh-autosuggestions ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-autosuggestions
 # sane defaults, aliases, functions, auto-completion, prompt themes
 git clone --recursive https://github.com/sorin-ionescu/prezto.git "${ZDOTDIR:-$HOME}/.zprezto"
 
