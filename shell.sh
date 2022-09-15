@@ -18,10 +18,10 @@ else
 fi
 
 echo "Setting up Git"
-sh git-setup.sh $EMAIL
+# sh git-setup.sh $EMAIL
 
 echo "Setting up SSH key"
-sh ssh-key-setup.sh $EMAIL
+# sh ssh-key-setup.sh $EMAIL
 
 # Install Homebrew if needed
 # Homebrew seems to require Git with user.name and user.email configured
@@ -45,6 +45,9 @@ git clone https://github.com/zsh-users/zsh-syntax-highlighting.git ${ZSH_CUSTOM:
 git clone https://github.com/zsh-users/zsh-autosuggestions $ZSH_CUSTOM/plugins/zsh-autosuggestions
 # sane defaults, aliases, functions, auto-completion, prompt themes
 git clone --recursive https://github.com/sorin-ionescu/prezto.git "${ZDOTDIR:-$HOME}/.zprezto"
+
+echo "Setting zsh as default shell. You may need to restart your machine for changes to take effect"
+chsh -s $(which zsh)
 
 echo "Install JDK 8"
 brew install openjdk@8
