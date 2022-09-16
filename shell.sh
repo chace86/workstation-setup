@@ -51,6 +51,14 @@ git clone --recursive https://github.com/sorin-ionescu/prezto.git "${ZDOTDIR:-$H
 echo "Setting zsh as default shell. You may need to restart your machine for changes to take effect"
 chsh -s $(which zsh)
 
+# Copy zsh config files
+cp ./zsh/.zlogin ~/.zlogin
+cp ./zsh/.zlogout ~/.zlogout
+cp ./zsh/.zpreztorc ~/.zpreztorc
+cp ./zsh/.zprofile ~/.zprofile
+cp ./zsh/.zshenv ~/.zshenv
+cp ./zsh/.zshrc ~/.zshrc
+
 echo "Install JDK 8"
 brew install openjdk@8
 sudo ln -sfn $(brew --prefix)/opt/openjdk@8/libexec/openjdk.jdk /Library/Java/JavaVirtualMachines/openjdk-8.jdk
