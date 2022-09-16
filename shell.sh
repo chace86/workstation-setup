@@ -61,6 +61,7 @@ cp ./zsh/.zshrc ~/.zshrc
 
 echo "Install JDK 8"
 brew install openjdk@8
+# Create symlink
 sudo ln -sfn $(brew --prefix)/opt/openjdk@8/libexec/openjdk.jdk /Library/Java/JavaVirtualMachines/openjdk-8.jdk
 java -version
 
