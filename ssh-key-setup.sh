@@ -2,6 +2,8 @@
 
 EMAIL=$1
 
+# Info: https://docs.github.com/en/authentication/connecting-to-github-with-ssh/generating-a-new-ssh-key-and-adding-it-to-the-ssh-agent
+
 if [ -z "$EMAIL" ]; then
     echo "No email argument supplied"
     exit 1
@@ -21,7 +23,7 @@ ssh-keygen -q -t ed25519 -C "$EMAIL" -f $HOME/.ssh/id_ed25519 -N ""
 eval "$(ssh-agent -s)"
 
 # add ssh key
-ssh-add -K $HOME/.ssh/id_ed25519
+sudo ssh-add -K $HOME/.ssh/id_ed25519
 
 # print public key to add
 echo "SSH Key created and added to agent. Add public key to remote (GitHub, GitLab, etc.)"

@@ -64,7 +64,7 @@ brew install python@3.8
 
 echo "Install CLI tools"
 brew tap aws/tap
-brew install jq tree gh glab gradle@6 maven sbt awscli@2 aws-sam-cli
+brew install jq tree gh glab gradle@6 maven sbt awscli@2 aws-sam-cli graphviz
 
 echo "Install applications"
 brew install --cask docker visual-studio-code intellij-idea-ce postman dbeaver-community
