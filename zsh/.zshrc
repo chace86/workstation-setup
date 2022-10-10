@@ -6,7 +6,8 @@ if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]
 fi
 
 export GRADLE_HOME=/usr/local/opt/gradle@6/libexec
-export PATH=$GRADLE_HOME/bin:$PATH
+export SCALA_HOME=/usr/local/Cellar/scala@2.12/2.12.17
+export PATH=$HOME/.jenv/bin:$PATH:$GRADLE_HOME/bin:$SCALA_HOME/bin:$PATH
 
 # Path to your oh-my-zsh installation.
 export ZSH="$HOME/.oh-my-zsh"
@@ -23,6 +24,8 @@ alias python=/usr/local/bin/python3.8
 
 source $ZSH/oh-my-zsh.sh
 source "${ZDOTDIR:-$HOME}/.zprezto/init.zsh"
+
+eval "$(jenv init -)"
 
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh

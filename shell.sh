@@ -63,7 +63,6 @@ echo "Install JDK 8"
 brew install openjdk@8
 # Create symlink
 sudo ln -sfn $(brew --prefix)/opt/openjdk@8/libexec/openjdk.jdk /Library/Java/JavaVirtualMachines/openjdk-8.jdk
-java -version
 
 echo "Install Scala 2.12"
 brew install scala@2.12
@@ -74,6 +73,12 @@ brew install python@3.8
 echo "Install CLI tools"
 brew tap aws/tap
 brew install jq tree gh glab gradle@6 maven sbt awscli@2 aws-sam-cli graphviz
+
+echo "Install jenv and add JDKs"
+# https://www.jenv.be/
+brew install jenv
+jenv add /Library/Java/JavaVirtualMachines/openjdk-8.jdk/Contents/Home
+jenv global 1.8 # set sbt to use jdk 8
 
 echo "Install applications"
 brew install --cask docker visual-studio-code intellij-idea-ce postman dbeaver-community
