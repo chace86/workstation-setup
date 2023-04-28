@@ -83,3 +83,7 @@ jenv global 1.8 # set sbt to use jdk 8
 echo "Install applications"
 brew install --cask docker visual-studio-code intellij-idea-ce neovim postman dbeaver-community
 brew install docker # Docker CLI needs to come after Docker Desktop
+
+echo "Set up Coursier for neovim Scala"
+brew install coursier/formulas/coursier
+cs setup
