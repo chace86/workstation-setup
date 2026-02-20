@@ -1,4 +1,5 @@
 #!/bin/sh
+set -euo pipefail
 
 # An email required for setting up Git and SSH
 EMAIL=$1
