@@ -9,6 +9,10 @@ Collection of scripts and files to set up macOS workstation
 - `ssh-key-setup.sh` - set up SSH Key. Requires email as a parmeter.
 - `zsh` - config files
 
+## Invoke
+
+`sh shell.sh chace.anderson@email.com`
+
 ## Notes
 
 .gitignore templates by GitHub: https://github.com/github/gitignore
